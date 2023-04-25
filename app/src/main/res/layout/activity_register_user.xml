@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".registerUser">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Crear una cuenta"
+        android:textSize="35sp"
+        android:layout_margin="10dp"
+
+        android:textStyle="bold"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+    >
+        <androidx.appcompat.widget.AppCompatEditText
+            android:layout_width="280dp"
+            android:layout_marginTop="20dp"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:hint="Nombre"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:layout_width="280dp"
+            android:layout_marginTop="20dp"
+            android:singleLine="true"
+            android:hint="Nick name"
+            android:maxLines="1"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:layout_width="280dp"
+            android:layout_marginTop="20dp"
+            android:singleLine="true"
+            android:hint="Email"
+            android:maxLines="1"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:layout_width="280dp"
+            android:layout_marginTop="20dp"
+            android:singleLine="true"
+            android:hint="Contraseña"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:layout_width="280dp"
+            android:layout_marginTop="20dp"
+            android:singleLine="true"
+            android:hint="Ciudad de residencia"
+            android:maxLines="1"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Ingresar"
+
+            android:textColor="@color/white"
+            android:layout_marginTop="50dp"
+            android:background="@color/purple_700"  />
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

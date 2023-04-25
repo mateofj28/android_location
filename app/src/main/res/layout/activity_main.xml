@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ingresa a tu cuenta"
+        android:textStyle="bold"
+        android:layout_marginBottom="30dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="120dp"
+        android:textSize="22sp" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/txtNickName"
+        android:layout_width="280dp"
+        android:layout_gravity="center"
+        android:singleLine="true"
+        android:hint="Nick name"
+        android:maxLines="1"
+        android:layout_height="wrap_content" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/txtPassword"
+        android:layout_width="280dp"
+        android:layout_marginTop="20dp"
+        android:singleLine="true"
+        android:maxLines="1"
+        android:hint="Contraseña"
+        android:inputType="textPassword"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnEnter"
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Ingresar"
+
+        android:textColor="@color/white"
+        android:layout_marginTop="50dp"
+        android:background="@color/purple_700"  />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="220dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No tienes una cuenta ?"/>
+
+        <TextView
+            android:id="@+id/txtRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:textStyle="bold"
+            android:text="Registrate"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>
