@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
 
 
         txRegister.setOnClickListener {
-             val intent = Intent(this, RegisterUser::class.java)
+             val intent = Intent(this, RegisterUserActivity::class.java)
              startActivity(intent)
         }
 

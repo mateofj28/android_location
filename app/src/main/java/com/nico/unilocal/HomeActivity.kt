@@ -11,12 +11,20 @@ class HomeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_home)
 
         val btnButton = findViewById<AppCompatButton>(R.id.btnCreateLocation)
+        val btnButtonShowMap = findViewById<AppCompatButton>(R.id.btnShowMap)
 
         btnButton.setOnClickListener { navigationToCreateLocation() }
+        btnButtonShowMap.setOnClickListener { navigationToShowMap() }
     }
 
-    fun navigationToCreateLocation(){
+    private fun navigationToCreateLocation(){
         val intent = Intent(this, CreateUbicationActivity::class.java)
+        startActivity(intent)
+        // #4DA8DA
+    }
+
+    private fun navigationToShowMap(){
+        val intent = Intent(this, ViewMapActivity::class.java)
         startActivity(intent)
     }
 }
