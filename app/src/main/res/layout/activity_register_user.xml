@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".registerUser">
+    tools:context=".RegisterUserActivity">
 
     <TextView
         android:layout_width="wrap_content"
@@ -23,6 +23,7 @@
         android:orientation="vertical"
     >
         <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/txtName"
             android:layout_width="280dp"
             android:layout_marginTop="20dp"
             android:singleLine="true"
@@ -32,15 +33,18 @@
             android:layout_height="wrap_content" />
 
         <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/txtLastname"
             android:layout_width="280dp"
+
             android:layout_marginTop="20dp"
             android:singleLine="true"
-            android:hint="Nick name"
+            android:hint="Nombre de Usuario"
             android:maxLines="1"
             android:layout_gravity="center"
             android:layout_height="wrap_content" />
 
         <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/txtEmail"
             android:layout_width="280dp"
             android:layout_marginTop="20dp"
             android:singleLine="true"
@@ -50,6 +54,7 @@
             android:layout_height="wrap_content" />
 
         <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/txtPassword"
             android:layout_width="280dp"
             android:layout_marginTop="20dp"
             android:singleLine="true"
@@ -60,6 +65,7 @@
             android:layout_height="wrap_content" />
 
         <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/txtCity"
             android:layout_width="280dp"
             android:layout_marginTop="20dp"
             android:singleLine="true"
@@ -69,14 +75,23 @@
             android:layout_height="wrap_content" />
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnInsert"
             android:layout_width="190dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Ingresar"
+            android:text="Crear cuenta"
 
             android:textColor="@color/white"
             android:layout_marginTop="50dp"
+
             android:background="@color/purple_700"  />
+
+
+
+
+
+
+
     </LinearLayout>
 
 

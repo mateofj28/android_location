@@ -15,14 +15,14 @@
         android:layout_marginBottom="30dp"
         android:layout_gravity="center"
         android:layout_marginTop="120dp"
-        android:textSize="22sp" />
+        android:textSize="30sp" />
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/txtNickName"
+        android:id="@+id/txtUsername"
         android:layout_width="280dp"
         android:layout_gravity="center"
         android:singleLine="true"
-        android:hint="Nick name"
+        android:hint="Nombre de Usuario"
         android:maxLines="1"
         android:layout_height="wrap_content" />
 

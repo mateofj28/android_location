@@ -1,5 +1,6 @@
 package com.nico.unilocal
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -19,6 +20,9 @@ class ViewMapActivity : AppCompatActivity(), OnMapReadyCallback {
 
         val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
+
+
+
     }
 
     override fun onMapReady(p0: GoogleMap) {
@@ -29,5 +33,23 @@ class ViewMapActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
         // this is to show camara for map
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+
+
+        mMap.setOnMapClickListener{ latLng ->
+            val markerOptions = MarkerOptions().position(latLng).title("New marker")
+            mMap.addMarker(markerOptions)
+        }
+
+        mMap.setOnMarkerClickListener { marker ->
+
+
+            val intent = Intent(this, CreateUbicationActivity::class.java)
+            intent.putExtra("lat", marker.position.latitude)
+            intent.putExtra("lng", marker.position.longitude)
+            startActivity(intent)
+
+            true
+        }
     }
+
 }

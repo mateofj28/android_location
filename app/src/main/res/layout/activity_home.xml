@@ -15,18 +15,31 @@
         android:layout_gravity="center"
         android:text="Crear Lugar"
         android:textColor="@color/white"
+        android:textAllCaps="false"
         android:layout_marginTop="50dp"
-        android:background="@color/purple_700"  />
+        android:background="@drawable/button_rounded"  />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnShowMap"
         android:layout_width="190dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Ver mapa"
+        android:text="Ver Mapa"
+        android:textAllCaps="false"
         android:textColor="@color/white"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/button_rounded"  />
 
-        android:layout_marginTop="50dp"
-        android:background="#1E3F5B"  />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnShowPlaces"
+        android:layout_width="190dp"
+        android:textAllCaps="false"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Ver Lugares"
+
+        android:textColor="@color/white"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/button_rounded"  />
 
 </LinearLayout>

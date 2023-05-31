@@ -23,6 +23,7 @@
         android:orientation="vertical"
         >
         <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/txtDescription"
             android:layout_width="280dp"
             android:layout_marginTop="20dp"
             android:singleLine="true"
@@ -32,6 +33,7 @@
             android:layout_height="wrap_content" />
 
         <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/txtName"
             android:layout_width="280dp"
             android:layout_marginTop="20dp"
             android:singleLine="true"
@@ -41,6 +43,7 @@
             android:layout_height="wrap_content" />
 
         <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/txtSchedule"
             android:layout_width="280dp"
             android:layout_marginTop="20dp"
             android:singleLine="true"
@@ -50,28 +53,31 @@
             android:layout_height="wrap_content" />
 
         <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/txtPhone"
             android:layout_width="280dp"
             android:layout_marginTop="20dp"
             android:singleLine="true"
-            android:hint="Contraseña"
+            android:hint="Teléfono"
             android:maxLines="1"
             android:layout_gravity="center"
             android:layout_height="wrap_content" />
 
         <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/txtCategory"
             android:layout_width="280dp"
             android:layout_marginTop="20dp"
             android:singleLine="true"
-            android:hint="Ciudad de residencia"
+            android:hint="Categoria"
             android:maxLines="1"
             android:layout_gravity="center"
             android:layout_height="wrap_content" />
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnCreatePlace"
             android:layout_width="190dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Ingresar"
+            android:text="Crear Lugar"
 
             android:textColor="@color/white"
             android:layout_marginTop="50dp"
