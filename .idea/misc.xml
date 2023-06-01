@@ -8,14 +8,16 @@
         <entry key="..\:/Users/MATEOFJ28/AndroidStudioProjects/uniLocal/app/src/main/res/layout/activity_create_ubication.xml" value="0.22" />
         <entry key="..\:/Users/MATEOFJ28/AndroidStudioProjects/uniLocal/app/src/main/res/layout/activity_home.xml" value="0.22" />
         <entry key="..\:/Users/MATEOFJ28/AndroidStudioProjects/uniLocal/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/MATEOFJ28/AndroidStudioProjects/uniLocal/app/src/main/res/layout/activity_places_rcv.xml" value="0.25" />
         <entry key="..\:/Users/MATEOFJ28/AndroidStudioProjects/uniLocal/app/src/main/res/layout/activity_recycler_view_places.xml" value="0.18025078369905956" />
         <entry key="..\:/Users/MATEOFJ28/AndroidStudioProjects/uniLocal/app/src/main/res/layout/activity_register_user.xml" value="0.22" />
         <entry key="..\:/Users/MATEOFJ28/AndroidStudioProjects/uniLocal/app/src/main/res/layout/activity_view_map.xml" value="0.12916666666666668" />
+        <entry key="..\:/Users/MATEOFJ28/AndroidStudioProjects/uniLocal/app/src/main/res/layout/item_list_dataplaces.xml" value="0.4466666666666667" />
         <entry key="..\:/Users/MATEOFJ28/AndroidStudioProjects/uniLocal/app/src/main/res/layout/item_recycler_view_place.xml" value="0.1" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_16" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17_PREVIEW" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

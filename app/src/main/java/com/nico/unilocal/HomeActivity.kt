@@ -30,7 +30,7 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun navigationToShowPlaces(){
-        val intent = Intent(this, RecyclerViewPlacesActivity::class.java)
+        val intent = Intent(this, PlacesActivityRcv::class.java)
         startActivity(intent)
     }
 

@@ -39,4 +39,18 @@ class Place {
         this.lat = lat
         this.lng = lng
     }
+
+    constructor(
+        name: String,
+        description: String,
+        lat: Double,
+        lng: Double
+    ) {
+        this.name = name
+        this.description = description
+        this.lat = lat
+        this.lng = lng
+    }
+
+
 }

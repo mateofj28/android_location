@@ -9,10 +9,15 @@ import android.database.sqlite.SQLiteOpenHelper
 class DataBase(context: Context): SQLiteOpenHelper(context, "unidolcadb", null, 1) {
     override fun onCreate(db: SQLiteDatabase?) {
         var sqlCreateTableUser = "create table User (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, lastname TEXT, email TEXT, password TEXT, city TEXT)"
-        var sqlCreateTablePlace = "create table Place (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, description TEXT, schedule TEXT, phone TEXT, category TEXT, comments TEXT, ratings TEXT, state INTEGER, lat REAL, lng REAL, moderator INTEGER , FOREIGN KEY (moderator) REFERENCES User(id) ON DELETE SET NULL)"
+        var sqlCreateTableModerator = "create table Moderator (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, nickname TEXT, password TEXT)"
+        var sqlCreateTablePlace = "create table Place (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, description TEXT, schedule TEXT, phone TEXT, category TEXT, comments TEXT, ratings TEXT, state INTEGER, lat REAL, lng REAL, createdBy INTEGER, updatedBy INTEGER , FOREIGN KEY (createdBy) REFERENCES User(id) ON DELETE SET NULL, FOREIGN KEY (updatedBy) REFERENCES Moderator(id) ON DELETE SET NULL)"
+        var sqlCreateFirstModerator = "INSERT INTO Moderator (nickname, password) VALUES ('admin', 'secret123')"
 
         db?.execSQL(sqlCreateTableUser)
+        db?.execSQL(sqlCreateTableModerator)
+        db?.execSQL(sqlCreateFirstModerator)
         db?.execSQL(sqlCreateTablePlace)
+            .uh m
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
@@ -80,7 +85,7 @@ class DataBase(context: Context): SQLiteOpenHelper(context, "unidolcadb", null, 
     }
 
     fun findAll(): Cursor? {
-        val p0 = this.writableDatabase
+        val p0 = this.readableDatabase
         return p0.rawQuery("SELECT * FROM Place", null)
     }
 }

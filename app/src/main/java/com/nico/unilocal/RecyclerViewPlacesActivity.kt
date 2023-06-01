@@ -15,10 +15,10 @@ class RecyclerViewPlacesActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recycler_view_places)
-
+        db = DataBase(this)
         recyclerView = findViewById(R.id.RcvPlaces)
 
-        db = DataBase(this)
+
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.setHasFixedSize(true)
         getPlaces()
@@ -33,12 +33,10 @@ class RecyclerViewPlacesActivity : AppCompatActivity() {
             val uSchedule = newCursor.getString(2)
             val uPhone = newCursor.getString(3)
 
-
             println("nombre: $uName")
             println("des: $uDesc")
             println("schedule: $uSchedule")
             println("des: $uPhone")
-
 
             newArrayPlace.add(Place(uName, uDesc, uSchedule, uPhone, "1", "", "", 4.22, 1.44, 0, null))
         }
