@@ -27,7 +27,7 @@ class PlacesActivityRcv : AppCompatActivity() {
 
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerPlaces)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        val adapter = DataPlacesAdapter(places)
+        val adapter = DataPlacesAdapter(places, db)
         recyclerView.adapter = adapter
 
     }

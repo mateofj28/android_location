@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class DataPlacesAdapter(private val places: List<DataPlace>): RecyclerView.Adapter<DataPlacesAdapter.ViewHolder>(){
+class DataPlacesAdapter(private val places: List<DataPlace>, private val db: DataBase): RecyclerView.Adapter<DataPlacesAdapter.ViewHolder>(){
 
     class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         val titleTextView: TextView = itemView.findViewById(R.id.txtTitle)
@@ -25,13 +25,26 @@ class DataPlacesAdapter(private val places: List<DataPlace>): RecyclerView.Adapt
         holder.titleTextView.text = place.title
         holder.desTextView.text = place.desc
 
-        holder.btnAccept.setOnClickListener { println("----Accept---- $position" ) }
-        holder.btnReject.setOnClickListener { println("----Reject---- $position") }
+        holder.btnAccept.setOnClickListener { setState(place.title, true, db.getUserId("admin")!!) }
+        holder.btnReject.setOnClickListener {  setState(place.title, false, db.getUserId("admin")!!) }
 
     }
 
     override fun getItemCount(): Int {
         return places.size
+    }
+
+    private fun setState(name: String, value: Boolean, id: Int){
+        println(name)
+        println(value)
+
+        val res = db.updateState(name, value, id)
+        println(res)
+        if (res > 0) {
+            println("--- UPDATE OK ---")
+        } else {
+            println("--- UPDATE ERROR ---")
+        }
     }
 
 }

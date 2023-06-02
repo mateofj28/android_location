@@ -1,10 +1,13 @@
 package com.nico.unilocal
 
+import android.annotation.SuppressLint
 import android.content.ContentValues
 import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import android.util.Log
+import java.lang.Exception
 
 class DataBase(context: Context): SQLiteOpenHelper(context, "unidolcadb", null, 1) {
     override fun onCreate(db: SQLiteDatabase?) {
@@ -17,7 +20,7 @@ class DataBase(context: Context): SQLiteOpenHelper(context, "unidolcadb", null, 
         db?.execSQL(sqlCreateTableModerator)
         db?.execSQL(sqlCreateFirstModerator)
         db?.execSQL(sqlCreateTablePlace)
-            .uh m
+
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
@@ -43,6 +46,23 @@ class DataBase(context: Context): SQLiteOpenHelper(context, "unidolcadb", null, 
         }
         db.close()
     }
+
+    @SuppressLint("Range")
+    fun getUserId(username: String): Int? {
+        val db = this.readableDatabase
+        val query = "SELECT id FROM User WHERE email = ?"
+        val cursor = db.rawQuery(query, arrayOf(username))
+
+        var userId: Int? = null
+        if (cursor.moveToFirst()) {
+            userId = cursor.getInt(cursor.getColumnIndex("id"))
+        }
+
+        cursor.close()
+        db.close()
+        return userId
+    }
+
 
 
     fun findCredentialUser(username: String, password: String): Boolean {
@@ -87,5 +107,23 @@ class DataBase(context: Context): SQLiteOpenHelper(context, "unidolcadb", null, 
     fun findAll(): Cursor? {
         val p0 = this.readableDatabase
         return p0.rawQuery("SELECT * FROM Place", null)
+    }
+
+    fun updateState(name: String, state: Boolean, updatedBy: Int ): Int {
+        val db = this.writableDatabase
+        val contentValues = ContentValues()
+        contentValues.put("state", state)
+        contentValues.put("updatedBy", updatedBy)
+
+        return try {
+            val rowsAffected = db.update("Place", contentValues, "name = ?", arrayOf(name))
+            db.close()
+            rowsAffected
+        } catch (e: Exception){
+            println("Error a update")
+            db.close()
+            -1
+        }
+
     }
 }
